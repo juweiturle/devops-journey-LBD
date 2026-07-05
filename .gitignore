@@ -1,0 +1,52 @@
+# OS files
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+
+# IDE
+.vscode/
+.idea/
+*.iml
+
+# Secrets (NEVER commit)
+.env
+.env.*
+*.pem
+*.key
+secrets/
+*.tfvars
+!example.tfvars
+
+# Logs
+*.log
+logs/
+
+# Terraform
+.terraform/
+terraform.tfstate*
+crash.log
+
+# Ansible
+*.retry
+
+# Python
+__pycache__/
+*.pyc
+venv/
+.pytest_cache/
+
+# Node (pour CloudShop plus tard)
+node_modules/
+
+# Build
+dist/
+build/
+target/
+
+# Docker
+.docker/
+
+# Local data
+data/
+*.db
