@@ -1,0 +1,3 @@
+ERROR: connection failed
+INFO: all good
+ERROR: timeout
