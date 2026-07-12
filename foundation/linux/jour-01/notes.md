@@ -35,6 +35,38 @@ _(On le fera juste après)_
 
 _(À remplir)_
 
+## Jour 1 suite
+cd ~/devops-journey-LBD/01-foundation/linux/jour-01
+
+# Créer un dossier
+mkdir test_dir
+
+# Créer un fichier vide
+touch test_file.txt
+
+# Voir ce qu'on a créé
+ls -la
+
+# Copier
+cp test_file.txt test_file_copy.txt
+ls -la
+
+# Renommer / déplacer
+mv test_file_copy.txt renamed.txt
+ls -la
+
+# Supprimer
+rm renamed.txt
+rmdir test_dir   # supprime un dossier vide
+
+# Créer + supprimer un truc (⚠️ dangereux)
+mkdir -p temp/level1/level2
+ls -laR temp/
+
+# rm -rf (⚠️ DANGEREUX)
+rm -rf temp/
+ls -la
+
 ## 📌 Commit du jour
 
 ```bash
