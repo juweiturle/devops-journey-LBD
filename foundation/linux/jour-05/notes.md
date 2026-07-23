@@ -1,24 +1,20 @@
-# Liste tous les processus
-ps aux | head -10
+# 📅 Jour 5 — Processus, Services, Signaux
 
-# Top interactif (appuie q pour quitter)
-top
+## 🎯 Signaux Unix essentiels
 
-# Cherche un process précis
-ps aux | grep sshd
+| Signal | Numéro | Comportement | Usage |
+|--------|--------|--------------|-------|
+| SIGTERM | 15 | "Termine-toi proprement" (cleanup possible) | 1er choix |
+| SIGINT | 2 | "Interromps-toi" (Ctrl+C) | Interruption utilisateur |
+| SIGKILL | 9 | "Meurs maintenant" (pas de cleanup) | Dernier recours |
 
-# Liste tous les services
-systemctl list-units --type=service | head -20
+## 🧠 Règle d'or
 
-# Statut du service SSH (celui qui te permet de te connecter)
-systemctl status ssh
+Toujours essayer SIGTERM avant SIGKILL. SIGKILL ne laisse aucune chance au process de faire son cleanup.
 
-# Logs du service SSH
-sudo journalctl -u ssh --since "1 hour ago" | head -30
+## 🧪 Lab du jour
 
-# Stautus du srvice cron
-systemctl status cron 
-
-# Activation du service cron 
-sudo systemctl start cron
-sudo systemctl enable cron (demarre le service cron au demarrage)
+- ✅ ps aux pour voir les process
+- ✅ kill vs kill -9
+- ✅ systemctl status
+- ✅ cleanup-demo.sh qui montre le cleanup sur SIGTERM
